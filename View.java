@@ -85,7 +85,8 @@ public class View {
     }
 
     public void mostrarPontos(int pontos){
-        System.out.println("Pontos:" + pontos);
+        System.out.println("Pontos do jogador:" + pontos);
     }
+
 
 }

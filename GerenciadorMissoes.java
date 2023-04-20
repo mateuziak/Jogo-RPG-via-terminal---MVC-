@@ -4,7 +4,7 @@ public class GerenciadorMissoes {
     // ***************************************************************************************
     // Atributos
     // ***************************************************************************************
-
+    int totalPontos = 10;
     // Lista de missões
     ArrayList<Missao> missoes;
 
@@ -16,7 +16,7 @@ public class GerenciadorMissoes {
     // Verifica se o jogador está no inicio ou no fim de uma missao
     // ============================================================
     void verificar_missoes(int jogador_x, int jogador_y) {
-        System.out.println("Chamou verificar missoes");
+
         // --------------------------------------------------
         // Descobre se o jogador está no inicio de uma missao
         // --------------------------------------------------
@@ -33,6 +33,7 @@ public class GerenciadorMissoes {
 
                 /* Iniciar missão */
                 missoes.get(i).iniciar_missao();
+            
 
             }
         }
@@ -40,7 +41,6 @@ public class GerenciadorMissoes {
         // -----------------------------------------------
         // Descobre se o jogador está no fim de uma missao
         // -----------------------------------------------
-        int totalPontos = 0;
         for (int i = 0; i < missoes.size(); i++) {
 
             //// Compara o fim da missão com a posição do jogador
@@ -50,14 +50,14 @@ public class GerenciadorMissoes {
                 /* Se a missão não está em andamento, não pode completar */
                 if (missoes.get(i).get_ativa() == false) break;
 
+                Controle.getPontos += totalPontos;
                 /* Completar missão */
-                this.completar_missao(i);                                
+                this.completar_missao(i);
+                
+
             }
-
-            totalPontos = totalPontos + missoes.get(i).pontosDaMissao;
-
-        } 
-        Controle.mostrarPontos(totalPontos);
+            
+        }
     }
 
     // ============================================================
@@ -86,8 +86,9 @@ public class GerenciadorMissoes {
     private void completar_missao(int i) {
         /* Altera o status da missão */
         missoes.get(i).completar_missao();
+        
     }
-
+    
     // ===================================================================
     // Verifica se existe uma missão ainda não realizada na coordenada x,y
     // ===================================================================

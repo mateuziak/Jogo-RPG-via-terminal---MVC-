@@ -19,6 +19,8 @@ class Controle {
         { "x", "x", "x", "x", "x", "x" }
     };
 
+    public static int getPontos;
+
     // ***************************************************************************************
     // Operações/Métodos
     // ***************************************************************************************
@@ -42,9 +44,8 @@ class Controle {
         // Mostra os dados do usuario
         tela.mostrar_infos(player.get_x(), player.get_y());
 
-        // Mostra os pontos
-
-        tela.mostrarPontos(player.getPontos());
+        //Mostra os pontos do usuario
+        tela.mostrarPontos(getPontos);
 
         //// Mostra o mapa
         tela.desenhar_mapa(mapa, player.get_x(), player.get_y());
@@ -57,6 +58,7 @@ class Controle {
 
     }
     
+
     // ============================================================
     // Método que realiza os procedimentos necessários para cada
     // comando do usuário
@@ -75,6 +77,9 @@ class Controle {
             nova_posicao_y--;
         } else if (comando.equals("s")) {
             nova_posicao_y++;
+        } else if (comando.equals("q")){
+            System.out.println("Jogo Encerrado");
+            System.exit(0);
         }
 
         /* Se tiver uma parede onde ele quer ir, não faz nada */
@@ -119,11 +124,5 @@ class Controle {
         while(true) {
             operacao();
         }
-
-    }
-
-    public static void mostrarPontos (int pontos) {
-        tela.mostrarPontos(pontos);
-        
     }
 }
