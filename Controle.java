@@ -81,7 +81,7 @@ class Controle {
         } else if (comando.equals("s")) {
             nova_posicao_y++;
         } else if (comando.equals("q")){
-            System.out.println("Jogo Encerrado");
+            tela.jogoEncerrado();
             System.exit(0);
         }
         
@@ -118,7 +118,7 @@ class Controle {
         tela = new View();
 
         /* Nosso jogador */
-        player = new Jogador(3, 3);
+        player = new Jogador(1, 1);
 
         /* Nossas missões */
         missoes = new GerenciadorMissoes();
@@ -132,9 +132,11 @@ class Controle {
 
         boolean todasCompletas = missoes.todas_missoes_completas();
         if (todasCompletas) {
-            System.out.println("Parabens, você completou todas as missoes!");
+            tela.fimDeJogo();
+            tela.mostrarPontos(getPontos);
             System.exit(0);
         }
+
     }
     }
 }

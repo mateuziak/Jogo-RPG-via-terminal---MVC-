@@ -28,12 +28,15 @@ public class Missao {
 
         // Gera um objetivo aleatório
         Random gerador = new Random();
-        this.destino_x = (gerador.nextInt() % 4) + 1;
-        this.destino_y = (gerador.nextInt() % 4) + 1;
+        int limite = 4;
+        this.destino_x = gerador.nextInt(limite) + 1;
+        this.destino_y = gerador.nextInt(limite) + 1;
 
         // garante que ele vai estar entre 1 e 5
-        if (destino_x < 0) destino_x = -destino_x;
-        if (destino_y < 0) destino_y = -destino_y;
+        
+        if (destino_x > 0 && destino_x <= 4);
+        if (destino_y > 0 && destino_y <= 4);
+        
     }
 
     // ============================================================
@@ -62,6 +65,7 @@ public class Missao {
 
 
     public int get_destino_x() {
+
         return destino_x;
     }
 

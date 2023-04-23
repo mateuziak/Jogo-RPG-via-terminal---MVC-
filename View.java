@@ -14,7 +14,7 @@ public class View {
     // ============================================================
     public void limpar_tela() {
         //System.out.print("\033[H\033[2J");  
-        //System.out.flush();
+        System.out.flush();
     }
 
     // ============================================================
@@ -27,7 +27,7 @@ public class View {
 
                 /* Casp seja a posição do jogador */
                 if (jogador_y == y && jogador_x == x) {
-                    System.out.print("@");
+                    System.out.print("#");
 
                 }
                 /* Caso seja a posição do início de uma missão */
@@ -95,6 +95,10 @@ public class View {
       }
 
     public void fimDeJogo() {
-        System.out.println("Parabens, você conclui o jogo!");
+        System.out.println("Parabens, voce conclui o jogo!");
+    }
+
+    public void jogoEncerrado() {
+        System.out.println("Jogo encerrado!");
     }
 }
