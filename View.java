@@ -59,7 +59,7 @@ public class View {
     // ============================================================
     public String obter_direcao() {
         /* Pede um direção para andar */
-        System.out.println("Digite uma direção: (W, A, S, D)");
+        System.out.println("Digite uma direcao: (W, A, S, D)");
 
         /* Obtém a resposta */
         String entrada = sc.nextLine();
@@ -88,5 +88,13 @@ public class View {
         System.out.println("Pontos do jogador:" + pontos);
     }
 
+    public void exibirTelaInicio() {
+        System.out.println("Bem-vindo ao RPG do Terminal! Pressione Enter para iniciar.");
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+      }
 
+    public void fimDeJogo() {
+        System.out.println("Parabens, você conclui o jogo!");
+    }
 }

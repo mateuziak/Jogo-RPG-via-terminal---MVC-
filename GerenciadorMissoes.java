@@ -74,6 +74,8 @@ public class GerenciadorMissoes {
             if (missoes.get(i).get_ativa() == true) {
                 missoes_ativas += missoes.get(i).get_texto() + System.lineSeparator();
             }
+
+            
         }
 
         /* Devolve a lista com todas as missões ativas */
@@ -87,6 +89,7 @@ public class GerenciadorMissoes {
         /* Altera o status da missão */
         missoes.get(i).completar_missao();
         
+        System.out.println(missoes.get(i).get_texto() + " Completada! Parabens por terminar essa missao!" );
     }
     
     // ===================================================================
@@ -145,9 +148,20 @@ public class GerenciadorMissoes {
         missoes = new ArrayList<Missao>();
 
         /* Adiciona missões */
-        missoes.add(new Missao("Missão: Encontre o anel de fogo", 1, 1));
-        missoes.add(new Missao("Missão: Encontre a pedra de jade", 4, 4));
-        missoes.add(new Missao("Missão: Encontre a lótus cinza", 4, 1));
+        missoes.add(new Missao("Missao: Encontre o anel de fogo", 1, 1));
+        missoes.add(new Missao("Missao: Encontre a pedra de jade", 4, 4));
+        missoes.add(new Missao("Missao: Encontre a lótus cinza", 4, 1));
     }
+
+    public boolean todas_missoes_completas() {
+        for (Missao missao : missoes) {
+            if (!missao.get_completa()) {
+                return false;
+                }
+            }
+            return true;
+    }
+
+    
 
 }

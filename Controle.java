@@ -29,6 +29,8 @@ class Controle {
     // ============================================================
     // Método que controla o laço principal do jogo
     // ============================================================
+
+
     public static void operacao() {
 
         //// Limpa a tela
@@ -56,6 +58,7 @@ class Controle {
         //// Processa a entrada do usuário
         processar_comando(direcao);
 
+        
     }
     
 
@@ -81,7 +84,7 @@ class Controle {
             System.out.println("Jogo Encerrado");
             System.exit(0);
         }
-
+        
         /* Se tiver uma parede onde ele quer ir, não faz nada */
         if (mapa[nova_posicao_y][nova_posicao_x].equals("x")) {
             return;
@@ -93,6 +96,7 @@ class Controle {
 
         /* Verificar se tem uma missão no local (início ou fim) */
         missoes.verificar_missoes(player.get_x(), player.get_y());
+
 
     }
 
@@ -110,7 +114,7 @@ class Controle {
 
     public static void main(String[] args) {
         //// Inicializa os atributos
-        /* Interações com o usuário */
+        /* Interações com o usuário */ 
         tela = new View();
 
         /* Nosso jogador */
@@ -119,10 +123,20 @@ class Controle {
         /* Nossas missões */
         missoes = new GerenciadorMissoes();
 
+        tela.exibirTelaInicio();
 
         //// Inicia o jogo
+
         while(true) {
-            operacao();
+        operacao();
+
+        boolean todasCompletas = missoes.todas_missoes_completas();
+        if (todasCompletas) {
+            System.out.println("Parabens, você completou todas as missoes!");
+            System.exit(0);
         }
     }
+    }
 }
+        
+        
