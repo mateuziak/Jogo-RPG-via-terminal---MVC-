@@ -45,4 +45,6 @@ class Jogador {
     public void mostrarPontos(){
         System.out.println("Pontos Atuais: " + Controle.getPontos);
     }
+
+    // Classe jogador atualizada
 }

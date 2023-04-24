@@ -96,4 +96,6 @@ public class Missao {
         this.missao_completa = false;
     }
 
+    // Clase missao atualiazada
+    
 }

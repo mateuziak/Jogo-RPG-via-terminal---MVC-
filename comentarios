@@ -1,0 +1,3 @@
+Para começar, abra o terminal usando: ctrl + J
+Para iniciar o código, salve o arquivo usando: javac *.java
+Para começar o jogo, execute o Controle usando: java Controle
