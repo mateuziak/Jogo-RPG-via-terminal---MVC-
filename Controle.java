@@ -72,15 +72,17 @@ class Controle {
         int nova_posicao_x = player.get_x();
         int nova_posicao_y = player.get_y();
 
-        if (comando.equals("a")) {
+        String comandoUpp = comando.toUpperCase();
+
+        if (comandoUpp.equals("A")) {
             nova_posicao_x--;
-        } else if (comando.equals("d")) {
+        } else if (comandoUpp.equals("D")) {
             nova_posicao_x++;
-        } else if (comando.equals("w")) {
+        } else if (comandoUpp.equals("W")) {
             nova_posicao_y--;
-        } else if (comando.equals("s")) {
+        } else if (comandoUpp.equals("S")) {
             nova_posicao_y++;
-        } else if (comando.equals("q")){
+        } else if (comandoUpp.equals("Q")){
             tela.jogoEncerrado();
             System.exit(0);
         }

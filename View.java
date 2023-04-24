@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class View {
 
     // Scanner para ler a entrada 

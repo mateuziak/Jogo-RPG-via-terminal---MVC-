@@ -1,4 +1,7 @@
+
 import java.util.ArrayList;
+
+
 
 public class GerenciadorMissoes {
     // ***************************************************************************************
@@ -89,7 +92,7 @@ public class GerenciadorMissoes {
         /* Altera o status da missão */
         missoes.get(i).completar_missao();
         
-        System.out.println(missoes.get(i).get_texto() + " Completada! Parabens por terminar essa missao!" );
+        System.out.println(missoes.get(i).get_texto() + " = Completada! Parabens por terminar essa missao!" );
     }
     
     // ===================================================================
